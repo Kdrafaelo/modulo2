@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+    <title>Criptografia de mensagens</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="respansividade.css">
+
+    <!-- Local JS -->
+    <script src="CifraCesar.js" defer></script>
+    <script src="base64.js" defer></script>
+    <script src="main.js" defer></script>
+
+    
+    <script src="https://kit.fontawesome.com/190e245c5e.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header box">
+        <h1 class="title">Criptografie sua mensagem!</h1>
+        <p class="header__text">
+          <strong><span>Codifique</span>/<span>decodifique</span></strong> sua mensagem com o nosso incrível sistema de criptografia.
+          <br>
+          Escolha entre as criptografias <a href="https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar" target="_blank" rel="noopener external"><strong>Cifra de César</strong></a> ou
+          <a href="https://pt.wikipedia.org/wiki/Base64" target="_blank" rel="noopener external"><strong>Base64</strong></a> para criptografar a sua mensagem! Assim como os grandes amantes que escondem sua paixão para sociedade!
+        </p>
+      </header>
+
+      <main>
+        <hr>
+        <div class="cont">
+
+            <h1>decodificador</h1>
+
+            <div class="tag">
+                <p class="tag64">> base64</p>
+                <p class="tagcifra">> cifra de césar</p>
+            </div>
+
+            <form>
+
+                <textarea name="texto" id="texto" cols="50" rows="3" placeholder="Digite aqui"></textarea>
+                <!-- TEXTO -->
+
+                <!--Caixa de selecionar-->
+                <select name="select" id="select" class="select" onclick="selecao()">
+                    <option id="option" value="selecione">Selecione uma opção</option>
+                    <option id="base64" value="base64">Base64</option>
+                    <option id="cifra" value="cifra">Cifra de César</option>
+                </select>
+
+                <div class="chave-cont" id="chaveCont">
+                    <!--Chave para a cifra de César-->
+
+                    <label class="chave" for="range">Escolha uma chave:</label>
+
+                    <div class="deslize">
+                        <input type="range" value="1" min="1" max="26" class="range" id="range"
+                            oninput="rangenumber.value=value" />
+                        <input type="number" value="1" id="rangenumber" min="1" max="26" oninput="range.value=value" />
+                    </div>
+
+                </div>   
+                <div class="radiobtn">
+                    <!--Botões codificar e decodificar-->
+
+                    <div>
+                        <input type="radio" id="codificar" name="selecione" value="codificar" checked/>
+                        <label for="codificar">Codificar</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="decodificar" name="selecione" value="decodificar" />
+                        <label for="decodificar">Decodificar</label>
+                    </div>
+                </div>
+
+                <textarea id="resultado" cols="50" rows="3" placeholder="Resultado"></textarea>
+                <!--Resultado-->
+                <br>
+                <br>    
+                <div class="btn">
+                    <!--Botão para obter o resultado-->
+                    <button id="resultbtn">Codificar Mensagem!</button>
+                </div>
+
+            </form>
+
+     
+    </div>
+  </body>
+</html>
